@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Словникові картки — вивчення англійських слів</title>
+  <meta name="description" content="Картки для вивчення англійських слів та фраз за темами: подорож, готель, магазин, робота та інші. Переклад українською та російською." />
+  <meta name="theme-color" content="#14231C" />
+
+  <!-- Маніфест і іконки -->
+  <link rel="manifest" href="/flashcards-pwa/manifest.json" />
+  <link rel="icon" href="/flashcards-pwa/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="/flashcards-pwa/icons/icon-192.png" />
+
+  <!-- Стилі -->
+  <link rel="stylesheet" href="/flashcards-pwa/styles.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Скрипти -->
+  <script src="/flashcards-pwa/data.js"></script>
+  <script src="/flashcards-pwa/app.js"></script>
+
+  <!-- Реєстрація Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/flashcards-pwa/sw.js')
+        .then(reg => console.log('Service Worker зареєстровано:', reg))
+        .catch(err => console.error('Помилка реєстрації SW:', err));
+    }
+  </script>
+</body>
+</html>
